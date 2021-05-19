@@ -1,20 +1,22 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.0
+# hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN mkdir /hassio_bticino_smarter
-#RUN chmod a=rw /hassio_bticino_smarter
-WORKDIR /hassio_bticino_smarter
-
-RUN apk add --no-cache --virtual build-deps \
+# Setup base
+# hadolint ignore=DL3003
+RUN \
+    apk add --no-cache --virtual .build-dependencies \
            bash \
 #           tzdata \
-#           python3 \
-           pip3 
+           python3=3.8.10 \
+           py3-pip=20.3.4-r0\ 
 #           git \
 #           openssl 
 #           curl 
-#           mosquitto-clients
+           mosquitto-clients=1.6.12-r2
            
 COPY bticino.py /hassio_bticino_smarter
 COPY run.sh /hassio_bticino_smarter
