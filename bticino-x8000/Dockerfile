@@ -10,7 +10,7 @@ RUN apk add --no-cache --virtual build-deps \
            bash \
 #           tzdata \
 #           python3 \
-           pip 
+           pip3 
 #           git \
 #           openssl 
 #           curl 
@@ -31,6 +31,6 @@ COPY templates/package.yml.jinja2 /hassio_bticino_smarter/templates
 
 RUN chmod a+x /hassio_bticino_smarter/run.sh
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 CMD [ "/hassio_bticino_smarter/run.sh" ]
