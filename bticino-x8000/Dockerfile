@@ -9,14 +9,14 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-           bash \
+           bash 
 #           tzdata \
-           python3=3.8.10 \
-           py3-pip=20.3.4-r0\ 
+#           python3=3.8.10 \
+#           py3-pip=20.3.4-r0\ 
 #           git \
 #           openssl 
 #           curl 
-           mosquitto-clients=1.6.12-r2
+#           mosquitto-clients=1.6.12-r2
            
 COPY bticino.py /hassio_bticino_smarter
 COPY run.sh /hassio_bticino_smarter
@@ -33,6 +33,6 @@ COPY templates/package.yml.jinja2 /hassio_bticino_smarter/templates
 
 RUN chmod a+x /hassio_bticino_smarter/run.sh
 
-RUN pip3 install -r requirements.txt
+#RUN pip3 install -r requirements.txt
 
 CMD [ "/hassio_bticino_smarter/run.sh" ]
