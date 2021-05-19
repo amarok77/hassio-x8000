@@ -2,6 +2,10 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+RUN mkdir /hassix8000
+\
+WORKDIR /hassix8000
+
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -18,21 +22,21 @@ RUN \
 #           curl 
 #           mosquitto-clients=1.6.12-r2
            
-COPY bticino.py /hassio_bticino_smarter
-COPY run.sh /hassio_bticino_smarter
-COPY requirements.txt /hassio_bticino_smarter
-RUN mkdir /hassio_bticino_smarter/config
-COPY config/config.yml /hassio_bticino_smarter/config
-COPY config/mqtt_config.yml /hassio_bticino_smarter/config
-COPY config/smarter.json /hassio_bticino_smarter/config
-RUN mkdir /hassio_bticino_smarter/templates
-COPY templates/file_conf.html /hassio_bticino_smarter/templates
-COPY templates/index.html /hassio_bticino_smarter/templates
-COPY templates/info.html /hassio_bticino_smarter/templates
-COPY templates/package.yml.jinja2 /hassio_bticino_smarter/templates
+COPY bticino.py /hassix8000
+COPY run.sh /hassix8000
+COPY requirements.txt /hassix8000
+RUN mkdir /hassix8000/config
+COPY config/config.yml /hassix8000/config
+COPY config/mqtt_config.yml /hassix8000/config
+COPY config/smarter.json /hassix8000/config
+RUN mkdir /hassix8000/templates
+COPY templates/file_conf.html /hassix8000/templates
+COPY templates/index.html /hassix8000/templates
+COPY templates/info.html /hassix8000/templates
+COPY templates/package.yml.jinja2 /hassix8000/templates
 
-RUN chmod a+x /hassio_bticino_smarter/run.sh
+RUN chmod a+x /hassix8000/run.sh
 
 #RUN pip3 install -r requirements.txt
 
-CMD [ "/hassio_bticino_smarter/run.sh" ]
+CMD [ "/hassix8000/run.sh" ]
