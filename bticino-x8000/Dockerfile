@@ -7,7 +7,7 @@ RUN mkdir /hassio_bticino_smarter
 WORKDIR /hassio_bticino_smarter
 
 RUN apk add --no-cache --virtual build-deps \
-           bash \
+           bash 
 #           tzdata \
 #           python3 \
 #           py3-pip \
