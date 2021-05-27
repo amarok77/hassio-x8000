@@ -15,8 +15,8 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
            bash 
 #           tzdata \
-#           python3=3.8.10 \
-#           py3-pip=20.3.4-r0\ 
+           python3=3.8.10 \
+           py3-pip=20.3.4-r0\ 
 #           git \
 #           openssl 
 #           curl 
@@ -35,7 +35,17 @@ COPY templates/index.html /hassix8000/templates
 COPY templates/info.html /hassix8000/templates
 COPY templates/package.yml.jinja2 /hassix8000/templates
 
-RUN chmod a+x /hassix8000/run.sh
+RUN \
+    apk add --no-cache --virtual .build-dependencies \
+        \
+        Flask==1.1.1 \
+        requests==2.23.0 \
+        PyYAML==5.4 \
+        apscheduler==3.6.3 \
+        paho-mqtt==1.5.0 \
+        Flask-HTTPAuth==3.3.0
+
+#chmod a+x /hassix8000/run.sh
 
 #RUN pip3 install -r requirements.txt
 
