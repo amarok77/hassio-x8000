@@ -4,7 +4,12 @@
   "url": "https://github.com/amarok77/hassio-x8000/bticino-x8000",
   "slug": "smarter_x8000",
   "description": "Bticino Chronothermostats",
-  "arch": ["armhf", "armv7"],
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armhf",
+    "i386"
+  ],
   "startup": "services",
   "boot": "auto",
   "map": ["config:rw", "ssl:rw"],
