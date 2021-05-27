@@ -15,8 +15,8 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
            bash 
 #           tzdata \
-           python3=3.8.10 \
-           py3-pip=20.3.4-r0\ 
+#           python3=3.8.10 \
+#           py3-pip=20.3.4-r0\ 
 #           git \
 #           openssl 
 #           curl 
