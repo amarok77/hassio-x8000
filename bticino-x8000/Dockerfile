@@ -5,6 +5,8 @@ FROM ${BUILD_FROM}
 
 RUN mkdir /hassiox8000
 \
+RUN chmod a+rw /hassiox8000
+\
 WORKDIR /hassiox8000
 
 # Set shell
