@@ -13,9 +13,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-           bash 
+           bash \
 #           tzdata \
-           python3==3.8.10 \
+           python3==3.8.10 
 #           py3-pip=20.3.4-r0\ 
 #           git \
 #           openssl 
