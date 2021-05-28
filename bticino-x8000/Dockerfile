@@ -14,8 +14,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache --virtual .build-dependencies \
            bash \
+           python3
 #           tzdata \
-           python3==3.8.10 
+#           python3==3.8.10 
 #           py3-pip=20.3.4-r0\ 
 #           git \
 #           openssl 
