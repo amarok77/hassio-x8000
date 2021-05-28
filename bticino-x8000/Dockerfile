@@ -14,7 +14,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 # hadolint ignore=DL3003
-FROM raspberrypi:latest
+FROM raspbian:latest
 \
 RUN apt-get -y update
 \
