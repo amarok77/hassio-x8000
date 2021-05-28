@@ -13,8 +13,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-           bash 
-#           python3
+        \
+        bash \
+        python3
 #           tzdata \
 #           python3==3.8.10 
 #           py3-pip=20.3.4-r0\ 
@@ -44,7 +45,7 @@ RUN \
         PyYAML==5.4 \
         apscheduler==3.6.3 \
         paho-mqtt==1.5.0 \
-        python3==3.9.5-r1 \
+#        python3==3.9.5-r1 \
         Flask-HTTPAuth==3.3.0
 
 RUN chmod a+x /hassiox8000/run.sh
