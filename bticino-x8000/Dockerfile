@@ -14,6 +14,10 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 # hadolint ignore=DL3003
+FROM raspberrypi:latest
+\
+RUN apt-get -y update
+\
 RUN \
 #    apk add --no-cache --virtual .build-dependencies \
     apt-get install \
