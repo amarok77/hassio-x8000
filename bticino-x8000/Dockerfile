@@ -15,10 +15,12 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 # hadolint ignore=DL3003
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
-        \
+#    apk add --no-cache --virtual .build-dependencies \
+    apt-get install \
+    \
         bash \
-        python3
+        python3 \
+        -y
 #           tzdata \
 #           python3==3.8.10 
 #           py3-pip=20.3.4-r0\ 
