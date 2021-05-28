@@ -13,7 +13,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-           bash \
+           bash 
 #           python3
 #           tzdata \
 #           python3==3.8.10 
