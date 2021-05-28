@@ -45,7 +45,7 @@ RUN \
         paho-mqtt==1.5.0 \
         Flask-HTTPAuth==3.3.0
 
-CMD ["chmod a+x /hassiox8000/run.sh"]
+RUN chmod a+x /hassiox8000/run.sh
 
 #RUN pip3 install -r requirements.txt
 
