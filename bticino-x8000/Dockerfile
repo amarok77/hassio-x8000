@@ -44,7 +44,7 @@ RUN \
         PyYAML==5.4 \
         apscheduler==3.6.3 \
         paho-mqtt==1.5.0 \
-        python3==3.8.10 \
+        python3==3.9.5-r1 \
         Flask-HTTPAuth==3.3.0
 
 RUN chmod a+x /hassiox8000/run.sh
