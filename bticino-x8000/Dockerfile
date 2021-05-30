@@ -16,15 +16,15 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3003
 FROM alpine:latest
 \
-RUN apt-get -y update
+#RUN apt-get update
 \
 RUN \
-#    apk add --no-cache --virtual .build-dependencies \
-    apt-get install \
+    apk add --no-cache --virtual .build-dependencies \
+#    apt-get install \
     \
         bash \
         python3 \
-        -y
+#        -y
 #           tzdata \
 #           python3==3.8.10 
 #           py3-pip=20.3.4-r0\ 
