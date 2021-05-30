@@ -23,7 +23,7 @@ RUN \
 #    apt-get install \
     \
         bash \
-        python3 \
+        python3 
 #        -y
 #           tzdata \
 #           python3==3.8.10 
