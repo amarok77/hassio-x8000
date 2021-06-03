@@ -14,24 +14,23 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 # hadolint ignore=DL3003
-FROM alpine:latest
 \
 #RUN apt-get update
 \
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
+    apk add --no-cache \
 #    apt-get install \
     \
-        bash \
-        python3 
+    bash \
+    python3 \
 #        -y
 #           tzdata \
 #           python3==3.8.10 
-#           py3-pip=20.3.4-r0\ 
+   py3-pip \ 
 #           git \
 #           openssl 
 #           curl 
-#           mosquitto-clients=1.6.12-r2
+   mosquitto-clients
            
 COPY bticino.py /hassiox8000
 COPY run.sh /hassiox8000
